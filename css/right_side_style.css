@@ -1,0 +1,695 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    overflow: hidden;
+    min-width: 1360px;
+    min-height: 850px;
+}
+
+#mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10;
+    display: none;
+}
+
+/*添加标签模块*/
+#add_label_modal{
+    position: absolute;
+    width:720px;
+    height: 100px;
+    top: 200px;
+    left: 300px;
+    z-index: 11;
+    display: none;
+}
+
+#label_modal_header{
+    width: 100%;
+    height:40px;
+    background-color: rgb(248,248,248);
+    line-height: 40px;
+    float: left;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+#label_modal_content{
+    width: 100%;
+    height:250px;
+    background-color: rgb(240,243,244);
+    float:left;
+}
+
+#label_content_header{
+    width: 95%;
+    height:40px;
+    background-color: rgb(246,248,248);
+    float: left;
+    margin:20px 2.5% 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    padding-left: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+#label_content_body{
+    width: 95%;
+    height:120px;
+    background-color:white;
+    float:left;
+    margin-left: 2.5%;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-top: none;
+}
+
+#label_body_input{
+    width: 95%;
+    font-size: 14px;
+    height: 32px;
+    margin-left: 2.5%;
+    padding-left: 10px;
+    margin-top:12px;
+    outline: none;
+    border:1px solid rgba(0,0,0,0.2);
+}
+
+#label_body_input:focus{
+    border: 1px solid rgb(37,183,229);
+}
+
+#label_body_reset{
+    font-weight:600;
+    width: 65px;
+    height:30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    margin-top:10px;
+    margin-left: 25%;
+    background-color: rgb(37,183,229);
+    color:white;
+    white-space: pre-wrap;
+}
+
+#label_body_reset:hover{
+    background-color:rgb(27,169,213);
+    cursor: pointer;
+}
+
+#label_body_save{
+    font-weight:600;
+    width: 65px;
+    height:30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    margin-top:10px;
+    margin-left: 25%;
+    background-color: rgb(114,103,186);
+    color:rgba(225,225,225,1);
+    white-space: pre-wrap;
+}
+
+#label_body_save:hover{
+    background-color:rgb(99,85,178);
+    cursor: pointer;
+}
+
+/*添加文件模块*/
+#add_file_modal{
+    position: absolute;
+    width: 710px;
+    top: 150px;
+    left: 300px;
+    z-index: 12;
+    display: none;
+}
+
+#file_modal_header{
+    width: 100%;
+    height:40px;
+    background-color: rgb(248, 248, 248);
+    line-height: 40px;
+    float: left;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+#file_modal_content{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(255,255,255,1);
+}
+
+#select_file_input{
+    position: relative;
+    font-size:18px;
+    top:10px;
+    left: 40px;
+    color: rgba(0,0,0,0.6);
+}
+
+#add_file_upload{
+    font-weight: 600;
+    font-size: 14px;
+    width: 70px;
+    height: 32px;
+    margin-top:20px;
+    position: relative;
+    left:-20px;
+}
+
+/*添加歌曲模块*/
+#add_song_modal{
+    position: absolute;
+    width: 710px;
+    top: 150px;
+    left: 300px;
+    z-index: 12;
+    display: none;
+}
+
+#song_modal_header{
+    width: 100%;
+    height:40px;
+    background-color: rgb(248, 248, 248);
+    line-height: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    float: left;
+}
+
+#song_modal_content{
+    width: 100%;
+    height: 340px;
+    text-align: center;
+    background-color: #F0F3F4;
+    float: left;
+}
+
+#song_content_header{
+    width: 94%;
+    margin-left: 3%;
+    height: 43px;
+    line-height: 43px;
+    background-color:#F6F8F8 ;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-top: 3%;
+    text-align: left;
+    padding-left:15px;
+    color: rgba(0,0,0,0.9);
+    font-weight: 600;
+}
+
+#song_content_body{
+    width: 94%;
+    margin-left: 3%;
+    background-color: #FFFFFF;
+    height: 210px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-top: none;
+}
+
+#add_song_select{
+    width: 95%;
+    height: 29px;
+    border: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+    color: rgba(0,0,0,0.8);
+    font-size: 12px;
+}
+
+#add_song_select:focus{
+    border: 1px solid rgb(37,183,229);
+}
+
+#add_song_input_name{
+    width: 95%;
+    height: 29px;
+    border: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+    margin-top: 13px;
+    padding-left: 1.5%;
+}
+
+#add_song_input_name:focus{
+    border: 1px solid rgb(37,183,229);
+}
+
+#add_song_input_player{
+    width: 95%;
+    height: 29px;
+    border: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+    margin-top: 13px;
+    padding-left: 1.5%;
+}
+
+#add_song_input_player:focus{
+    border: 1px solid rgb(37,183,229);
+}
+
+#add_song_reset{
+    font-weight:600;
+    width: 65px;
+    height:30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    margin-top:10px;
+    margin-left: -5%;
+    background-color: rgb(37,183,229);
+    color:white;
+    white-space: pre-wrap;
+}
+
+#add_song_reset:hover{
+    background-color:rgb(27,169,213);
+    cursor: pointer;
+}
+
+#add_song_save{
+    font-weight:600;
+    width: 65px;
+    height:30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    margin-top:10px;
+    margin-left: 25%;
+    background-color: rgb(114,103,186);
+    color:rgba(225,225,225,1);
+    white-space: pre-wrap;
+}
+
+#add_song_save:hover{
+    background-color:rgb(99,85,178);
+    cursor: pointer;
+}
+
+
+/*主页歌曲列表*/
+#right_header{
+    width: 100%;
+    height: 8%;
+    background-color: #ffffff;
+    position: fixed;
+    left: 15%;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    transition: all 400ms;
+    box-shadow: inset 0px 0px 5px #b3b7bb;
+}
+
+#right_pick{
+    width: 38px;
+    height: 30px;
+    background-color:rgb(35,183,229);
+    outline: none;
+    border: none;
+    margin:14px 5px 5px 20px;
+    border-radius: 3px;
+    line-height: 32px;
+    vertical-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#right_pick:after{
+    display:inline-block;
+    content: '';
+    position:absolute;
+    background-color: #23B7E5;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    border-radius: 4px;
+    z-index: -1;
+    transition: all 1s;
+    opacity: 0;
+}
+
+#right_pick:hover:after{
+    opacity: 0.6;
+    left:0px;
+    top:0px;
+    right: 0px;
+    bottom:0px;
+    transition:0s;
+}
+
+#right_pick span{
+    display: inline-block;
+    width: 14px;
+    height: 15px;
+    background: url("../images/header.png") 100% 100% no-repeat;
+}
+
+#right_content{
+    width:85%;
+    height: 92%;
+    position: absolute;
+    left:15%;
+    top:8%;
+    overflow-y: scroll;
+    transition: all 400ms;
+    background-color: #F0F3F4;
+    overflow-x: hidden;
+}
+
+#content_header{
+    width: 100%;
+    height: 110px;
+    background-color: rgb(240,243,244);
+    line-height: 110px;
+    text-align: center;
+    min-height: 110px;
+}
+
+#content_header button{
+    display: inline-block;
+    text-decoration: none;
+    color:rgba(255,255,255,1) ;
+    font-size: 14px;
+    width:115px;
+    height: 29px;
+    background-color:rgb(35,183,229);
+    line-height: 29px;
+    border-radius: 3px;
+    min-width: 115px;
+    min-height: 29px;
+    outline: none;
+    border:none;
+    position:relative;
+    cursor: pointer;
+}
+
+#content_header button:hover{
+    background-color:rgb(25,169,213);
+}
+
+#content_title{
+    width: 99%;
+    margin-left: 1%;
+    height: 45px;
+    line-height: 45px;
+    min-height: 45px;
+    font-size: 14px;
+    font-weight: 700;
+    color:rgba(0,0,0,0.9);
+    padding-left: 15px;
+    border-top: 2px solid rgba(0,0,0,0.07);
+}
+
+#songInfo{
+    width: 99%;
+    margin-left: 1%;
+}
+
+#table_header{
+    width: 100%;
+    background-color:rgba(35,183,229,0.3);
+}
+
+#table_header th{
+    color:rgba(0,0,0,0.7);
+    border-top: none;
+    border-bottom: none;
+    padding-top:16px;
+    padding-bottom: 16px;
+    width: 33%;
+}
+
+#table_body td{
+    padding-top:8px;
+    padding-bottom: 8px;
+    color:rgba(0,0,0,0.7);
+}
+
+/* 歌曲榜的效果样式 */
+#newSong{
+    position: relative;
+}
+
+#hotSong{
+    position:relative;
+}
+
+#riseSong{
+    position:relative;
+}
+
+#chineseSong{
+    position: relative;
+}
+
+#trendSong{
+    position: relative;
+}
+
+#newSong:after,#hotSong:after,#riseSong:after,#chineseSong:after,#trendSong:after{
+    content: "";
+    display:inline-block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    pointer-events: none;
+    border-radius: 4px;
+    background-color: rgb(35,183,299);
+    opacity: 0;
+    transition: all 0.3s;
+}
+#newSong:hover:after, #hotSong:hover:after,#riseSong:hover:after,#chineseSong:hover:after,#trendSong:hover:after{
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0s;
+}
+
+/*歌曲验证*/
+#song_verify{
+    width: 300px;
+    height: 40px;
+    background-color:#D84C31;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    margin:50px 40%;
+    z-index: 100;
+    font-size: 16px;
+    font-weight: 500;
+    display: none;
+    border-radius: 6px;
+}
+
+/*删除标签*/
+#delete_list{
+    width: 500px;
+    height: 325px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top:230px;
+    left: 35%;
+    z-index: 100;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+}
+
+#delete_list_img{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 35px;
+    background: url("../images/song_delete_img.png");
+}
+
+#delete_list_confirm{
+    font-size: 30px;
+    color:#595959;
+    font-weight: 600;
+}
+
+#delete_list_alert{
+    display: inline-block;
+    font-size: 18px;
+    color:#545454;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+#delete_list_yes{
+    width: 98px;
+    height: 44px;
+    background-color:rgb(48,133,214);
+    border: 0;
+    box-shadow: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-right: 7px;
+}
+
+#delete_list_cancel{
+    width: 98px;
+    height: 44px;
+    background-color:rgb(170,170,170);
+    border: 0;
+    box-shadow: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+
+/*修改歌曲信息*/
+#change_song_info{
+    width: 600px;
+    height: 355px;
+    background-color: #FFFFFF;
+    margin: 90px 35%;
+    position: absolute;
+    border-radius: 4px;
+    display: none;
+    z-index: 100;
+}
+
+#change_header{
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 50px;
+    padding-left: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#change_label{
+    font-size: 14px;
+    display: inline-block;
+    width: 90%;
+    margin:20px 5% 0px;
+}
+
+#change_type{
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    display:inline-block;
+    float: left;
+    border: none;
+    padding-left: 10px;
+    margin: 0px 5% 15px;
+    border: 1px solid rgba(0,0,0,0.15);
+    background-color: #EEEEEE;
+
+}
+
+#change_songname{
+    font-size: 14px;
+    display: inline-block;
+    width: 90%;
+    margin:0px 5% 0px;
+}
+
+#change_songName_input{
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    display:inline-block;
+    float: left;
+    border: none;
+    padding-left: 10px;
+    margin: 0px 5% 15px;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+#change_player{
+    font-size: 14px;
+    display: inline-block;
+    width: 90%;
+    margin:0px 5% 0px;
+}
+
+#change_Player_input{
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    display:inline-block;
+    float: left;
+    border: none;
+    padding-left: 10px;
+    margin: 0px 5% 15px;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+
+#change_footer{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+#change_close{
+    width: 54px;
+    height: 30px;
+    border: none;
+    outline: none;
+    float: right;
+    line-height: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    color: rgba(0,0,0,0.7);
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+#change_close:hover{
+    background-color: rgb(237,241,242);
+    cursor: pointer;
+}
+
+#change_submit{
+    width: 82px;
+    height: 30px;
+    border: none;
+    outline: none;
+    float: right;
+    line-height: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color:#7266BA;
+    margin-right: 15px;
+    border-radius: 3px;
+}
+
+#change_submit:hover{
+    background-color: rgb(98,84,178);
+    cursor: pointer;
+}
